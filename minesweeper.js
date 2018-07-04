@@ -10,10 +10,10 @@ const generatePlayerBoard = (numberOfRows, numberOfColumns) => {
 
 };
 
-//console.log(generatePlayerBoard(3,3)); //BDD a player board is created
+// console.log(generatePlayerBoard(3,3)); //BDD a player board is created;
 
 
-const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBoms) => {
+const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
   
   let board = [];
 
@@ -22,8 +22,20 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBoms) => {
     for (var j = 0; j < numberOfColumns; j++) {
       row.push(null);
     } board.push(row);
-  } return board
+  };
+
+  let numberOfBombsPlaced = 0;
+
+  while (numberOfBombsPlaced < numberOfBombs) {
+    let randomRowIndex = Math.floor(Math.random() * numberOfRows);
+    let randomColumnIndex = Math.floor(Math.random() * numberOfColumns);
+    board[randomRowIndex, randomColumnIndex] = 'B'
+    numberOfBombsPlaced++;
+    // The code in your while loop has the potential to place bombs on top of already existing bombs. This will be fixed when you learn about control flow.
+  }
+
+  return board;
 
 }
 
-console.log(generateBombBoard(3,3,4));
+console.log(generateBombBoard(10,10,4)); //BDD a bomb board is create with "null" values;
