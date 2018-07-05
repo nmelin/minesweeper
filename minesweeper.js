@@ -44,5 +44,11 @@ const printBoard = board => {
 let playerBoard = generatePlayerBoard(3, 4);
 let bombBoard = generateBombBoard(3, 4, 5);
 
+console.log('Player Board: ')
+printBoard(playerBoard);
+
+console.log('Bomb Board: ');
+printBoard(bombBoard);
+
 
 console.log(generateBombBoard(5,5,2)); //BDD a bomb board is create with "null" values;
