@@ -37,8 +37,12 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
 
 };
 
-  const printBoard = board => {
-    console.log(board.map(row => row.join(' | ')).join('\n'));
-  }
+const printBoard = board => {
+  console.log(board.map(row => row.join(' | ')).join('\n'));
+};
+
+let playerBoard = generatePlayerBoard(3, 4);
+let bombBoard = generateBombBoard(3, 4, 5);
+
 
 console.log(generateBombBoard(5,5,2)); //BDD a bomb board is create with "null" values;
