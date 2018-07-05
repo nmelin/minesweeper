@@ -26,8 +26,12 @@ const generateBombBoard = (numberOfRows, numberOfColumns, numberOfBombs) => {
   let numberOfBombsPlaced = 0;
 
   while (numberOfBombsPlaced < numberOfBombs) {
-    let randomRowIndex = Math.floor(Math.random() * numberOfRows);
-    let randomColumnIndex = Math.floor(Math.random() * numberOfColumns);
+    const randomRowIndex = Math.floor(Math.random() * numberOfRows);
+    const randomColumnIndex = Math.floor(Math.random() * numberOfColumns);
+    if (randomRowIndex === 'B' || randomColumnIndex === 'B') {
+      break;
+    };
+
     board[randomRowIndex][randomColumnIndex] = 'B';
     numberOfBombsPlaced++;
     // The code in your while loop has the potential to place bombs on top of already existing bombs. This will be fixed when you learn about control flow.
@@ -51,4 +55,12 @@ console.log('Bomb Board: ');
 printBoard(bombBoard);
 
 
-console.log(generateBombBoard(5,5,2)); //BDD a bomb board is create with "null" values;
+
+
+
+
+
+
+
+
+
